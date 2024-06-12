@@ -2,6 +2,12 @@ import mysql from 'mysql';
 import dotenv from 'dotenv';
 
 dotenv.config();
+
+const pool = mysql.createPool({
+    keepAliveInitialDelay: 10000,
+    enableKeepAlive: true,
+});
+
 const db = mysql.createConnection({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,

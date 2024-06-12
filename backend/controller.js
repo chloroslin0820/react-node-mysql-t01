@@ -10,3 +10,21 @@ export const getALlBooks = (req, res) => {
         }
     });
 };
+
+export const createBook = (req, res) => {
+    const q = 'INSERT INTO tbl_books (`title`, `desc`, `cover`) VALUES (?)'
+    // const values = ["title from backend", "desctiption from backend", "cover pic from backend"]
+    const values = [
+        req.body.title,
+        req.body.desc,
+        req.body.cover,
+    ]
+
+    db.query(q, [values], (err, data) => {
+        if (err) {
+            return res.status(500).json(err);
+        } else {
+            return res.json("Books has been created successfully");
+        }
+    });
+};
