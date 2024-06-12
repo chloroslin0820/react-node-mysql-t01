@@ -45,7 +45,7 @@ export const deleteBook = (req, res) => {
 
 export const updateBook = (req, res) => {
     const bookId = req.params.id;
-    const q = 'UPDATE tbl_books SET `title` = ?, `desc` = ?, `price` = ?, `cover` = ?, WHERE id = ?'
+    const q = 'UPDATE tbl_books SET `title` = ?, `desc` = ?, `price` = ?, `cover` = ? WHERE id = ?'
 
     const values = [
         req.body.title,
