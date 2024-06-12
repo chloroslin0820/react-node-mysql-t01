@@ -12,12 +12,13 @@ export const getALlBooks = (req, res) => {
 };
 
 export const createBook = (req, res) => {
-    const q = 'INSERT INTO tbl_books (`title`, `desc`, `cover`) VALUES (?)'
-    // const values = ["title from backend", "desctiption from backend", "cover pic from backend"]
+    const q = 'INSERT INTO tbl_books (`title`, `desc`, `cover`, `price`) VALUES (?)'
+    // const values = ["title from backend", "desctiption from backend", "cover pic from backend", 47.50]
     const values = [
         req.body.title,
         req.body.desc,
         req.body.cover,
+        req.body.price,
     ]
 
     db.query(q, [values], (err, data) => {

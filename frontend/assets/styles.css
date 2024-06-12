@@ -1,0 +1,108 @@
+* {
+    padding: 4px 0;
+    margin: 0 auto;
+}
+@media (min-height: 620px) {
+    * {
+        padding: 2% 0;
+    }
+}
+
+.hero {
+    padding: 2% 0;
+    height: 100vh;
+    padding: 0px 10%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.hero .books {
+    display: grid;
+    gap: 20px;
+    overflow-y: auto;
+    height: 75vh;
+    border: 1px solid gray;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    padding: 10px 0%;
+}
+.hero .book {
+    flex: 1;
+    font-size: 0.8rem;
+    text-align: left;
+    width: 200px;
+    height: 300px;
+    margin: 4px 0;
+    padding-bottom: 8rem;
+}
+.hero .book h2::first-letter,
+.hero .book p::first-letter {
+    text-transform: capitalize;
+}
+.hero .book img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+}
+.hero .button-container {
+    margin-top: 10px;
+}
+.hero .delete,
+.hero .update {
+    padding: 3px 6px;
+    background-color: #fff;
+    cursor: pointer;
+}
+.hero .delete {
+    border: 1px solid rgb(245, 191, 191);
+    color: rgb(242, 100, 100);
+    margin: 0 0.5rem;
+}
+.hero .update {
+    border: 1px solid rgb(204, 204, 243);
+    color: rgb(139, 139, 234);
+    margin: 0 0.5rem;
+}
+.hero .add {
+    border: 1px solid rgb(191, 245, 191);
+    color: rgb(100, 242, 100);
+    margin: 0 0.5rem;
+    padding: 3px 6px;
+    background-color: #fff;
+    cursor: pointer;
+}
+.hero .add a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+}
+@media (max-width: 500px) {
+    .grid-container{
+        padding-top: 0;
+    }
+    .hero .delete,
+    .hero .update,
+    .hero .add {
+        font-size: 1.2rem;
+        padding: 0.4rem;
+    }
+}
+@media (max-width: 600px) {
+    .hero .grid-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .hero .books {
+        display: block;
+    }
+    .hero .book {
+        padding-bottom: 1px;
+    }
+}
+@media (max-width: 894px) {
+    .hero .books {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+}
