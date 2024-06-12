@@ -29,3 +29,16 @@ export const createBook = (req, res) => {
         }
     });
 };
+
+export const deleteBook = (req, res) => {
+    const bookId = req.params.id;
+    const q = 'DELETE FROM tbl_books WHERE id = ?'
+
+    db.query(q, [bookId], (err, data) => {
+        if (err) {
+            return res.status(500).json(err);
+        } else {
+            return res.json("Books has been deleted successfully");
+        }
+    });
+};
