@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { BASE_URL } from '../config/BaseLink';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import '../assets/styles.css';
 
 const Add = () => {
   const navigate = useNavigate();
@@ -36,14 +37,17 @@ const Add = () => {
   };
 
   return (
-    <form>
-      <h1>Add A New Book</h1>
-      <input type="text" placeholder="title" name="title" onChange={handleInput} />
-      <input type="text" placeholder="description" name="desc" onChange={handleInput} />
-      <input type="number" placeholder="price" name="price" onChange={handleInput} />
-      <input type="text" placeholder="cover" name="cover" onChange={handleInput} />
-      <button onClick={handleSubmit}>Submit</button>
-    </form>
+    <div className='form-container'>
+      <form>
+        <h1>Add A New Book</h1>
+        <input type="text" placeholder="title" name="title" onChange={handleInput} />
+        <input type="text" placeholder="description" name="desc" onChange={handleInput} />
+        <input type="number" placeholder="price" name="price" onChange={handleInput} />
+        <input type="text" placeholder="cover" name="cover" onChange={handleInput} />
+        <button className="form-button" onClick={handleSubmit}>Submit</button>
+        <a href="/">Back to Homepage</a>
+      </form>
+    </div>
   );
 }
 

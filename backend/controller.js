@@ -42,3 +42,23 @@ export const deleteBook = (req, res) => {
         }
     });
 };
+
+export const updateBook = (req, res) => {
+    const bookId = req.params.id;
+    const q = 'UPDATE tbl_books SET `title` = ?, `desc` = ?, `price` = ?, `cover` = ?, WHERE id = ?'
+
+    const values = [
+        req.body.title,
+        req.body.desc,
+        req.body.cover,
+        req.body.price,
+    ]
+
+    db.query(q, [...values, bookId], (err, data) => {
+        if (err) {
+            return res.status(500).json(err);
+        } else {
+            return res.json("Books has been updated successfully");
+        }
+    });
+};

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { BASE_URL } from '../config/BaseLink';
-import '../../assets/styles.css';
+import '../assets/styles.css';
 
 const Books = () => {
   const [books, setBooks] = useState([]);
@@ -50,7 +50,9 @@ const Books = () => {
               >
                 Delete
               </button>
-              <button className="update">Update</button>
+              <button className="update">
+                <Link to={`update/${book.id}`}>Update</Link>
+              </button>
               </div>
             </div>
           ))
