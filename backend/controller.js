@@ -50,8 +50,8 @@ export const updateBook = (req, res) => {
     const values = [
         req.body.title,
         req.body.desc,
-        req.body.cover,
         req.body.price,
+        req.body.cover,
     ]
 
     db.query(q, [...values, bookId], (err, data) => {
